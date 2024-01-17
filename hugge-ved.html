@@ -20,6 +20,29 @@
 
         let amountOfWood = 0;
         let horses = 0;
+
+        //ARBEIDSKRAVRELEVANT
+
+        document.addEventListener("keydown", function(event){
+            if(event.key == "c"){
+                //alert("Du trykket på c!")
+                amountOfWood += 10;
+                woodTxt.innerHTML = `Antall tre:${amountOfWood}`;
+            }
+        })
+
+        horse.addEventListener("click", buyHorse);
+
+        function buyHorse(){
+            if (amountOfWood >= 100){
+                amountOfWood -= 100;
+                horses++;
+                woodTxt.innerHTML = `Antall tre:${amountOfWood}`;
+                horseTxt.innerHTML = `Antall hester:${horses}`;
+            } else {
+                alert("Du har ikke nok wood!");
+            }
+        }
     </script>
 </body>
 
