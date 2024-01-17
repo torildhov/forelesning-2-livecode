@@ -27,7 +27,7 @@
             if(event.key == "c"){
                 //alert("Du trykket på c!")
                 amountOfWood += 10;
-                woodTxt.innerHTML = `Antall tre:${amountOfWood}`;
+                updateCurrency();
             }
         })
 
@@ -37,12 +37,20 @@
             if (amountOfWood >= 100){
                 amountOfWood -= 100;
                 horses++;
-                woodTxt.innerHTML = `Antall tre:${amountOfWood}`;
-                horseTxt.innerHTML = `Antall hester:${horses}`;
+                updateCurrency();
             } else {
                 alert("Du har ikke nok wood!");
             }
         }
+
+        function updateCurrency(){
+        woodTxt.innerHTML = `Antall tre:${amountOfWood}`;
+        horseTxt.innerHTML = `Antall hester:${horses}`;
+        }
+
+        //mye likt i to forskjellige funksjoner kan dyttes ut til en egen funksjon som over. Kall på den nye fynksjonen inne i de andre funksjonene...
+
+        //Arbeidskrav 1: kl. 09.00 mandg. Spørsmål i egen tråd i teams. OK å bruke skravlehjørnet til å få hjelp. IKKE LOV Å KOPIERE KODE AV HVERANDRE ELLER BRUKE CHAT GTP.Hjelp hverandre er ok. Gjennomgang på onsdag. Anbefaler å starte med en gang. Bruk en uke. Innlevering etter to uker(?). Hvis det er noe feil i wiseflow ta kontakt med Amina med en gang. LEVERES SOM GITHUB LENKE. Forventet med MANGE commits. Push jevnt underveis. Push når du er ferdig med hver funksjon.. Ikke HTML og css på arbeidskravet, men .style i javaScript. Noe ferdig laget html og css som ikke trengs å røres, skal kun legge til muskler til programmet. 
     </script>
 </body>
 
