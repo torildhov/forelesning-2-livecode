@@ -43,25 +43,32 @@
         function getRandomAnimal(){
             let getRandomAnimal = Math.floor(Math.random() * animalsArray.length)
 
-            createAnimalCard();
-
-
+            createAnimalCard(animalsArray[randomAnimal]);
         }
 
-        function createAnimalCard(){
+        function createAnimalCard(animal){
             const animalContainer = document.createElement("div");
+            animalContainer.style.backgroundColor = generateRandomColor();
             const animalImage = document.createElement("img");
-            animalImage.src = "bilde sitt url"
+            animalImage.src = `animal/${animal.imgUrl}`;
             const animalName = document.createElement("h1");
-            animalName.innerHTML = "monsteret sitt navn";
+            animalName.innerHTML = animal.name;
 
             animalContainer.append(animalImage, animalName);
             animalsContainer.append(animalContainer);
         }
 
+        function generateRandomColor(){
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
+
+            return `rgb(${r}, ${g}, ${b})`
+        }
+
         console.log(animalsArray);
 
-    
+    //virker ikke... 
     </script>
 </body>
 
