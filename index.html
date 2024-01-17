@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handleliste</title>
+    <title>Tilfeldige dyr</title>
 </head>
 
 <body>
@@ -14,6 +14,54 @@
     <script>
         const showBtn = document.querySelector("#show-btn");
         const animalsContainer = document.querySelector("#animals-container")
+
+        let animalsArray = [
+            {
+                name: "Monstero",
+                imgUrl: "monster1.png",
+            },
+            {
+                name: "Moldus",
+                imgUrl: "monster2.png",
+            },
+            {
+                name: "Supperts",
+                imgUrl: "monster3.png",
+            },
+            {
+                name: "Poppers",
+                imgUrl: "monster4.png",
+            },
+            {
+                name: "Blåtann",
+                imgUrl: "monster5.png"
+            },
+        ]
+
+        showBtn.addEventListener("click", getRandomAnimal);
+
+        function getRandomAnimal(){
+            let getRandomAnimal = Math.floor(Math.random() * animalsArray.length)
+
+            createAnimalCard();
+
+
+        }
+
+        function createAnimalCard(){
+            const animalContainer = document.createElement("div");
+            const animalImage = document.createElement("img");
+            animalImage.src = "bilde sitt url"
+            const animalName = document.createElement("h1");
+            animalName.innerHTML = "monsteret sitt navn";
+
+            animalContainer.append(animalImage, animalName);
+            animalsContainer.append(animalContainer);
+        }
+
+        console.log(animalsArray);
+
+    
     </script>
 </body>
 
