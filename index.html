@@ -1,75 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tilfeldige dyr</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Tilfeldig dyr-generator</h1>
-    <input type="button" value="Vis tilfeldig dyr" id="show-btn">
+    <input type="button" value="Vis tilfeldig dyr" id="show-btn" />
     <div id="animals-container"></div>
     <script>
-        const showBtn = document.querySelector("#show-btn");
-        const animalsContainer = document.querySelector("#animals-container")
+      const showBtn = document.querySelector("#show-btn");
+      const animalsContainer = document.querySelector("#animals-container");
 
-        let animalsArray = [
-            {
-                name: "Monstero",
-                imgUrl: "monster1.png",
-            },
-            {
-                name: "Moldus",
-                imgUrl: "monster2.png",
-            },
-            {
-                name: "Supperts",
-                imgUrl: "monster3.png",
-            },
-            {
-                name: "Poppers",
-                imgUrl: "monster4.png",
-            },
-            {
-                name: "Blåtann",
-                imgUrl: "monster5.png"
-            },
-        ]
+      let animalsArray = [
+        {
+          name: "Monstero",
+          imgUrl: "monster1.png",
+        },
+        {
+          name: "Moldus",
+          imgUrl: "monster2.png",
+        },
+        {
+          name: "Supperts",
+          imgUrl: "monster3.png",
+        },
+        {
+          name: "Poppers",
+          imgUrl: "monster4.png",
+        },
+        {
+          name: "Blåtann",
+          imgUrl: "monster5.png"
+        },
+      ];
 
-        showBtn.addEventListener("click", getRandomAnimal);
+      showBtn.addEventListener("click", getRandomAnimal);
 
-        function getRandomAnimal(){
-            let getRandomAnimal = Math.floor(Math.random() * animalsArray.length)
+      function getRandomAnimal() {
+        let randomAnimal = Math.floor(Math.random() * animalsArray.length);
 
-            createAnimalCard(animalsArray[randomAnimal]);
-        }
+        createAnimalCard(animalsArray[randomAnimal]);
+      }
 
-        function createAnimalCard(animal){
-            const animalContainer = document.createElement("div");
-            animalContainer.style.backgroundColor = generateRandomColor();
-            const animalImage = document.createElement("img");
-            animalImage.src = `animal/${animal.imgUrl}`;
-            const animalName = document.createElement("h1");
-            animalName.innerHTML = animal.name;
+      function createAnimalCard(animal) {
+        const animalContainer = document.createElement("div");
+        animalContainer.style.backgroundColor = generateRandomColor();
+        const animalImage = document.createElement("img");
+        animalImage.src = `assets/${animal.imgUrl}`;
+        animalImage.style.width = "100px";
+        const animalName = document.createElement("h1");
+        animalName.innerHTML = animal.name;
 
-            animalContainer.append(animalImage, animalName);
-            animalsContainer.append(animalContainer);
-        }
+        animalContainer.append(animalImage, animalName);
+        animalsContainer.append(animalContainer);
+      }
 
-        function generateRandomColor(){
-            const r = Math.floor(Math.random() * 255);
-            const g = Math.floor(Math.random() * 255);
-            const b = Math.floor(Math.random() * 255);
+      function generateRandomColor() {
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
 
-            return `rgb(${r}, ${g}, ${b})`
-        }
+        return `rgb(${r}, ${g}, ${b})`;
+      }
 
-        console.log(animalsArray);
+      console.log(animalsArray);
 
-    //virker ikke... 
+      //alt i orden, virker som den skal
     </script>
-</body>
-
+  </body>
 </html>
